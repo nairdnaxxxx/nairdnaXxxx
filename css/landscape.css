@@ -1,0 +1,43 @@
+body {
+  background-image: url('../assets/beth2.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+#myButton {
+  background-color: black; /* initial color */
+  color: #6003ab;
+  border: solid 3px;
+  border-color: #6003ab;
+  padding: 2em 3em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+#myButton.clicked {
+  background-color: #6003ab; /* color after click */
+}
+
+.main {
+  background-color:black;
+  width:50%;
+  height:60%;
+  border-radius: 20px;
+  text-align: center;
+}
