@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A new web page">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.ico">
+    <title>about me UwU</title>
+     <link rel="icon" href="assets/yakumo.webp">
+    <link rel="stylesheet" href="../css/aboutme.css"
+</head>
+<body>
+  
+  <div class="card">
+  <img src="../assets/avatar2.jpeg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b> Ferry</b></h4>
+    <ul>
+      
+      <li>A cute beginner web developer</dt>
+      
+      <li>i'm arch btw</dt>
+      
+      <li>very professional</dt>
+      
+    </ul>
+  </div>
+</div>
+
+<script>
+  
+  function handleOrientationChange() {
+  if (window.innerWidth > window.innerHeight) {
+    window.location.href = "pages/landscape.html";
+  }
+}
+
+handleOrientationChange();
+
+window.addEventListener("resize", handleOrientationChange);
+window.addEventListener("orientationchange", handleOrientationChange);
+  
+</script>
+        
+</body>
+</html>
