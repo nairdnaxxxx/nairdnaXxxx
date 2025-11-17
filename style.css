@@ -75,7 +75,7 @@ img {
   transition: background 0.2s;
 }
 #MyButton.clicked {
-  background-color: red; /* color after click */
+  background-color: #6003ab; /* color after click */
 }
 
 #MyButton2 {
