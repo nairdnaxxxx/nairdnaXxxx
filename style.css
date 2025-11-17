@@ -64,7 +64,7 @@ img {
   height: 10vh;
 }
 
-#myButton {
+#MyButton {
   background-color: black; /* initial color */
   color: #6003ab;
   border: solid 3px;
@@ -74,11 +74,11 @@ img {
   border-radius: 10px;
   transition: background 0.2s;
 }
-#myButton.clicked {
+#MyButton.clicked {
   background-color: red; /* color after click */
 }
 
-#myButton2 {
+#MyButton2 {
   background-color: black; /* initial color */
   color: #6003ab;
   border: solid 3px;
@@ -88,11 +88,11 @@ img {
   border-radius: 10px;
   transition: background 0.2s;
 }
-#myButton2.clicked2 {
+#MyButton2.clicked2 {
   background-color: #6003ab; /* color after click */
 }
 
-#myButton2.clicked {
+MmyButton2.clicked {
   background-color: #6003ab; /* color after click */
 }
 
