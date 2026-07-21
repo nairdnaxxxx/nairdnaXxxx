@@ -24,19 +24,19 @@
         id="MyButton" class="MyButton">about me</button></div>
         
         <div class="center2">
-  <button
-    id="MyButton2"
-    
-    Social Media
+  <button id="MyButton2" class="MyButton2">Social Media
   </button>
 </div>
        
           </div>
          
         <script>
-          function MyButton(){
-            
-          }
+const button = document.getElementById('myButton');
+
+button.addEventListener('click', function() {
+  button.classList.toggle('clicked'); 
+});
+
         </script>
  
 </body>
