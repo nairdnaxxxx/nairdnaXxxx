@@ -51,16 +51,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding: 0.5em 0;
+  height: 10vh;
 }
 
 .center2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding: 0.5em 0;
+  height: 10vh;
 }
 
 #MyButton {
@@ -75,7 +73,6 @@ img {
 }
 #MyButton.clicked {
   background-color: #6003ab;
-  color: black;
 }
 
 #MyButton2 {
@@ -90,7 +87,6 @@ img {
 }
 #MyButton2.clicked2 {
   background-color: #6003ab;
-  color: black;
 }
 
 .card {
@@ -99,18 +95,16 @@ img {
   border-radius: 10px;
   text-align: center;
   position: relative;
-  padding: 1em 0;
+  padding: 1em 0
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
 }
 
 @property --angle{
   syntax: "<angle>";
   initial-value: 0deg;
-  inherits: false;
+  inherits: false
 }
 
 .card::after, .card::before{
