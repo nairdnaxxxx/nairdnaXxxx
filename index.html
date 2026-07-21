@@ -35,10 +35,7 @@
 const button = document.getElementById('MyButton');
 
 function flashButtonStyle() {
-  // 1. Toggle the style immediately on click
   button.classList.toggle('clicked');
-  
-  // 2. Wait 500 milliseconds (0.5 seconds), then toggle it again
   setTimeout(function() {
     button.classList.toggle('clicked');
   }, 100); 
@@ -49,6 +46,19 @@ function flashButtonStyle() {
 
 button.addEventListener('click', flashButtonStyle);
 
+const button = document.getElementById('MyButton2');
+
+function flashButtonStyle() {
+  button.classList.toggle('clicked2');
+  setTimeout(function() {
+    button.classList.toggle('clicked2');
+  }, 100); 
+  setTimeout(function() {
+    window.location.href = "pages/social.html"
+  }, 150);
+}
+
+button.addEventListener('click', flashButtonStyle);
         </script>
  
 </body>
