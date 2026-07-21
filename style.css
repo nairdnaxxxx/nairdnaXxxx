@@ -61,7 +61,7 @@ img {
   height: 10vh;
 }
 
-#MyButton {
+.MyButton {
   background-color: black;
   color: #6003ab;
   border: solid 3px;
@@ -71,11 +71,11 @@ img {
   border-radius: 10px;
   transition: background 0.2s;
 }
-#MyButton.clicked {
+.clicked {
   background-color: #6003ab;
 }
 
-#MyButton2 {
+.button2 {
   background-color: black;
   color: #6003ab;
   border: solid 3px;
@@ -85,7 +85,7 @@ img {
   border-radius: 10px;
   transition: background 0.2s;
 }
-#MyButton2.clicked2 {
+.clicked2 {
   background-color: #6003ab;
 }
 
