@@ -41,10 +41,10 @@ function flashButtonStyle() {
   // 2. Wait 500 milliseconds (0.5 seconds), then toggle it again
   setTimeout(function() {
     button.classList.toggle('clicked');
-  }, 500); 
+  }, 100); 
   setTimeout(function() {
     window.location.href = "pages/aboutme.html"
-  }, 100);
+  }, 150);
 }
 
 button.addEventListener('click', flashButtonStyle);
