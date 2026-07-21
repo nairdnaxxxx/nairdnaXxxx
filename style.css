@@ -20,9 +20,6 @@ html, body {
 
 
 
-
-
-
 img {
   display: block;
   margin: auto;
@@ -65,7 +62,7 @@ img {
 }
 
 #MyButton {
-  background-color: black; /* initial color */
+  background-color: black;
   color: #6003ab;
   border: solid 3px;
   border-color: #6003ab;
@@ -75,11 +72,11 @@ img {
   transition: background 0.2s;
 }
 #MyButton.clicked {
-  background-color: #6003ab; /* color after click */
+  background-color: #6003ab;
 }
 
 #MyButton2 {
-  background-color: black; /* initial color */
+  background-color: black;
   color: #6003ab;
   border: solid 3px;
   border-color: #6003ab;
@@ -89,7 +86,7 @@ img {
   transition: background 0.2s;
 }
 #MyButton2.clicked2 {
-  background-color: #6003ab; /* color after click */
+  background-color: #6003ab;
 }
 
 .card {
