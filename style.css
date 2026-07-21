@@ -5,7 +5,7 @@ body {
   background-size: cover;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,14 +17,13 @@ html, body {
   height: 100%;
 }
 
-
-
-
 img {
   display: block;
   margin: auto;
   border:3px solid #6003ab;
   border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .tombol {
@@ -48,63 +47,36 @@ img {
  background-color: purple;
 }
 
-.center {
+.center, .center2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: auto;
+  padding: 0.5em 0;
 }
 
-.center2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-}
-
-#MyButton {
+#MyButton, #MyButton2 {
   background-color: black;
   color: #6003ab;
-  border: solid 3px;
-  border-color: #6003ab;
+  border: solid 3px #6003ab;
   padding: 1em 2em;
   cursor: pointer;
   border-radius: 10px;
-  /* be explicit about which property transitions */
-  transition: background-color 0.2s, color 0.2s;
+  /* be explicit about which properties transition */
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-/* support both .clicked and .clicked2 in case JS uses inconsistent names */
+/* pressed classes */
 #MyButton.clicked,
-#MyButton.clicked2 {
-  background-color: #6003ab;
-  color: white;
-}
-
-#MyButton:active {
-  /* temporary press color while the pointer is down */
-  background-color: #6003ab;
-  color: white;
-}
-
-#MyButton2 {
-  background-color: black;
-  color: #6003ab;
-  border: solid 3px;
-  border-color: #6003ab;
-  padding: 1em 2em;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-/* support both .clicked and .clicked2 for MyButton2 as well */
+#MyButton.clicked2,
 #MyButton2.clicked,
 #MyButton2.clicked2 {
   background-color: #6003ab;
   color: white;
 }
 
+/* keep :active as a backup for immediate feedback */
+#MyButton:active,
 #MyButton2:active {
   background-color: #6003ab;
   color: white;
@@ -112,14 +84,23 @@ img {
 
 .card {
   background-color: black;
-  width: 50%;
+  width: min(720px, 80%);
   border-radius: 10px;
   text-align: center;
   position: relative;
-  padding: 1em 0;
+  padding: 1.5em 1em;
   display: flex;
-  justify-content: center;
+  /* stack content vertically and center it */
+  flex-direction: column;
+  justify-content: center; /* vertical centering inside the card */
   align-items: center;
+  gap: 1em;
+}
+
+/* ensure large heading scales and centers */
+.card h1 {
+  margin: 0;
+  line-height: 1;
 }
 
 @property --angle{
@@ -148,12 +129,6 @@ img {
 }
 
 @keyframes spin{
-  from{
-  --angle: 0deg;
-  }
-  
-  to{
-  --angle: 360deg;
-  }
-
+  from{ --angle: 0deg; }
+  to{ --angle: 360deg; }
 }

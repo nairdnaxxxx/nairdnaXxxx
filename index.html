@@ -16,10 +16,8 @@
           
           <h1 style="color:#6003ab;text-align:center;font-size:4.0vw;">｡.:*･'ᶠˣʳʳʸ'･*:.｡</h1>
          
-         
           <img src="assets/jibril.gif" style="width:19.0vw">
           
-        
         <div class="center"> <button
         id="MyButton"
     aria-label="Go to contact page">about me</button></div>
@@ -32,43 +30,65 @@
     Social Media
   </button>
 </div>
-        
-        
           
           </div>
-          
-       
-         
-         
+
         <script>
-          
+          // Responsive orientation handler
           function handleOrientationChange() {
-  if (window.innerWidth > window.innerHeight) {
-    window.location.href = "pages/landscape.html";
-  }
-}
+            if (window.innerWidth > window.innerHeight) {
+              window.location.href = "pages/landscape.html";
+            }
+          }
 
-handleOrientationChange();
+          handleOrientationChange();
+          window.addEventListener("resize", handleOrientationChange);
+          window.addEventListener("orientationchange", handleOrientationChange);
 
-window.addEventListener("resize", handleOrientationChange);
-window.addEventListener("orientationchange", handleOrientationChange);
-         
-    document.getElementById("MyButton").addEventListener("click", function() {
-  this.classList.add("clicked");
-  setTimeout(() => {
-    window.location.href = 'pages/aboutme.html';
-  }, 150);
-});
+          // Robust press-to-navigate helper that ensures the pressed state is visible even on fast taps
+          function addPressNavigate(buttonId, className, href, delay = 180) {
+            const btn = document.getElementById(buttonId);
+            if (!btn) return;
+            let navTimer = null;
 
-document.getElementById("MyButton2").addEventListener("click", function() {
-  this.classList.add("clicked2");
-  setTimeout(() => {
-    window.location.href = 'pages/social.html';
-  }, 150);
-});
+            const navigate = () => { window.location.href = href; };
 
+            const startPress = (e) => {
+              // add visual state immediately
+              btn.classList.add(className);
+            };
 
-          
+            const endPressAndNavigate = (e) => {
+              // ensure browser paints the pressed state before navigating
+              // run on next frame then wait `delay` ms
+              requestAnimationFrame(() => {
+                if (navTimer) clearTimeout(navTimer);
+                navTimer = setTimeout(navigate, delay);
+              });
+            };
+
+            // pointer events cover mouse + touch in modern browsers
+            btn.addEventListener('pointerdown', startPress);
+            btn.addEventListener('pointerup', endPressAndNavigate);
+
+            // also listen for pointercancel/leave to clean up
+            btn.addEventListener('pointercancel', () => btn.classList.remove(className));
+            btn.addEventListener('pointerleave', () => btn.classList.remove(className));
+
+            // fallback for older touch-only devices
+            btn.addEventListener('touchstart', startPress, {passive: true});
+            btn.addEventListener('touchend', endPressAndNavigate);
+
+            // click fallback (if pointer events not supported)
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              startPress();
+              requestAnimationFrame(() => setTimeout(navigate, delay));
+            });
+          }
+
+          addPressNavigate('MyButton', 'clicked', 'pages/aboutme.html', 180);
+          addPressNavigate('MyButton2', 'clicked2', 'pages/social.html', 180);
         </script>
  
 </body>
