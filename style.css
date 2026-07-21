@@ -37,7 +37,8 @@ img {
 
 .tombol1 {
   border: 3px outset red;
-  background-color: none;
+  /* use transparent instead of `none` */
+  background-color: transparent;
   border-radius: 10px;
   color: red;
   padding:20px;
@@ -69,10 +70,21 @@ img {
   padding: 1em 2em;
   cursor: pointer;
   border-radius: 10px;
-  transition: background 0.2s;
+  /* be explicit about which property transitions */
+  transition: background-color 0.2s, color 0.2s;
 }
-#MyButton.clicked {
+
+/* support both .clicked and .clicked2 in case JS uses inconsistent names */
+#MyButton.clicked,
+#MyButton.clicked2 {
   background-color: #6003ab;
+  color: white;
+}
+
+#MyButton:active {
+  /* temporary press color while the pointer is down */
+  background-color: #6003ab;
+  color: white;
 }
 
 #MyButton2 {
@@ -83,10 +95,19 @@ img {
   padding: 1em 2em;
   cursor: pointer;
   border-radius: 10px;
-  transition: background 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
+
+/* support both .clicked and .clicked2 for MyButton2 as well */
+#MyButton2.clicked,
 #MyButton2.clicked2 {
   background-color: #6003ab;
+  color: white;
+}
+
+#MyButton2:active {
+  background-color: #6003ab;
+  color: white;
 }
 
 .card {
