@@ -31,11 +31,23 @@
           </div>
          
         <script>
+          // JavaScript
 const button = document.getElementById('MyButton');
 
-button.addEventListener('click', function() {
-  button.classList.toggle('clicked'); 
-});
+function flashButtonStyle() {
+  // 1. Toggle the style immediately on click
+  button.classList.toggle('clicked');
+  
+  // 2. Wait 500 milliseconds (0.5 seconds), then toggle it again
+  setTimeout(function() {
+    button.classList.toggle('clicked');
+  }, 500); 
+  setTimeout(function() {
+    window.location.href = "aboutme.html"
+  }
+}
+
+button.addEventListener('click', flashButtonStyle);
 
         </script>
  
